@@ -1,0 +1,4 @@
+chrontab -e
+
+# Start GoGreen Bot every 6 hours
+0 */6 * * * python3 ~/go-green/bot.py >> ~/go-green/bot.log 2>&1
