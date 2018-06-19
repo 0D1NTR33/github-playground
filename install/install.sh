@@ -6,7 +6,7 @@
 # http://stackoverflow.com/questions/40262682/how-to-run-selenium-3-x-with-chrome-driver-through-terminal
 # http://askubuntu.com/questions/760085/how-do-you-install-google-chrome-on-ubuntu-16-04
 
-# Versions
+# Versions.
 CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE`
 SELENIUM_STANDALONE_VERSION=3.4.0
 SELENIUM_SUBDIR=$(echo "$SELENIUM_STANDALONE_VERSION" | cut -d"." -f-2)
@@ -42,7 +42,7 @@ sudo mv -f ~/selenium-server-standalone-$SELENIUM_STANDALONE_VERSION.jar /usr/lo
 sudo chown root:root /usr/local/bin/selenium-server-standalone.jar
 sudo chmod 0755 /usr/local/bin/selenium-server-standalone.jar
 
-# Install Python
+# Install Python.
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt autoremove
