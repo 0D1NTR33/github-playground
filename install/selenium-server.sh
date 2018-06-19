@@ -15,8 +15,31 @@ start-chrome-headless() {
 }
 
 #Run Test
-test() {
-    echo "Test passed!"
+test-path() {
+    OK=true
+
+    if test -f "/usr/local/bin/chromedriver";
+    then
+        echo "chromedriver: Ok!"
+    else
+        echo "File "chromedriver" not exists or not in path"
+        OK=false
+    fi
+
+    if test -f "/usr/local/bin/selenium-server-standalone.jar";
+    then
+        echo "selenium-server: Ok!"
+    else
+        echo "File "selenium-server" not exists or not in path"
+        OK=false
+    fi
+
+    if [ "$OK" == false ]
+    then
+        echo "Test not passed!"
+    else
+        echo "Test passed."
+    fi
 }
 
 "$@"
@@ -24,4 +47,4 @@ test() {
 # start-chrome
 # start-chrome-debug
 # start-chrome-headless
-# test
+# test-path
